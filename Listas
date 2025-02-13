@@ -1,0 +1,25 @@
+# Inicializando as listas para armazenar os números
+lista1 = []
+lista2 = []
+soma_lista = []
+
+# Lendo os 5 números inteiros para a primeira lista
+print("Digite os números para a primeira lista:")
+for i in range(5):
+    numero = int(input(f"Digite o {i+1}º número: "))
+    lista1.append(numero)
+
+# Lendo os 5 números inteiros para a segunda lista
+print("\nDigite os números para a segunda lista:")
+for i in range(5):
+    numero = int(input(f"Digite o {i+1}º número: "))
+    lista2.append(numero)
+
+# Calculando a soma dos elementos correspondentes das duas listas
+for i in range(5):
+    soma_lista.append(lista1[i] + lista2[i])
+
+# Exibindo as três listas
+print("\nPrimeira lista:", lista1)
+print("Segunda lista:", lista2)
+print("Lista de somas:",soma_lista)

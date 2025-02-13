@@ -1,0 +1,22 @@
+# Inicializando as listas para armazenar os pesos e alturas
+pesos = []
+alturas = []
+imcs = []
+
+# Lendo os pesos e alturas das 5 pessoas
+for i in range(5):
+    peso = float(input(f"Digite o peso da {i+1}ª pessoa (em kg): "))
+    altura = float(input(f"Digite a altura da {i+1}ª pessoa (em metros): "))
+    
+    # Adicionando o peso e altura nas listas respectivas
+    pesos.append(peso)
+    alturas.append(altura)
+    
+    # Calculando o IMC e adicionando na lista de IMCs
+    imc = peso / (altura ** 2)
+    imcs.append(imc)
+
+# Exibindo os IMCs calculados
+print("\nÍndices de Massa Corporal (IMC) das 5 pessoas:")
+for i in range(5):
+    print(f"Pessoa {i+1} - IMC: {imcs[i]:.2f}")

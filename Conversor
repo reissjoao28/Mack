@@ -1,0 +1,51 @@
+def exibeMsg():
+    print("Este programa é um conversor de unidades entre Celsius (C) e Fahrenheit (F).")
+    print("Você pode escolher:")
+    print("- 'C' para converter de Celsius para Fahrenheit.")
+    print("- 'F' para converter de Fahrenheit para Celsius.")
+    print()
+
+def verificaOpcao():
+    while True:
+        letra = input("Digite 'F' para Fahrenheit para Celsius ou 'C' para Celsius para Fahrenheit: ").strip().upper()
+        if letra in ('C', 'F'):
+            return letra
+        else:
+            print("Opção inválida. Tente novamente.")
+
+def verificaIntervalo():
+    while True:
+        try:
+            inicio = float(input("Digite o valor inicial do intervalo: "))
+            fim = float(input("Digite o valor final do intervalo: "))
+            if inicio < fim:
+                return inicio, fim
+            else:
+                print("O valor inicial deve ser menor que o valor final. Tente novamente.")
+        except ValueError:
+            print("Entrada inválida. Certifique-se de digitar números.")
+
+def exibeFtoC(inicio, fim):
+    print("\nConvertendo de Fahrenheit para Celsius:")
+    for fahrenheit in range(int(inicio), int(fim) + 1):
+        celsius = (fahrenheit - 32) / 1.8
+        print(f"{fahrenheit}°F = {celsius:.2f}°C")
+
+def exibeCtoF(inicio, fim):
+    print("\nConvertendo de Celsius para Fahrenheit:")
+    for celsius in range(int(inicio), int(fim) + 1):
+        fahrenheit = (celsius * 1.8) + 32
+        print(f"{celsius}°C = {fahrenheit:.2f}°F")
+
+def main():
+    exibeMsg()
+    letra = verificaOpcao()
+    inicio, fim = verificaIntervalo()
+
+    if letra == "F":
+        exibeFtoC(inicio, fim)
+    elif letra == "C":
+        exibeCtoF(inicio, fim)
+
+if __name__ == "__main__":
+    main()
